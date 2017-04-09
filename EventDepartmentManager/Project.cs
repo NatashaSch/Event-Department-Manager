@@ -8,10 +8,14 @@ namespace EventDepartmentManager
 {
     class Project
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public DateTime EndDate { get; set; }
-        public Client Client { get; set; }
-        public List<Employee> Team { get; set; }
+
+        public Project(string name, string description, DateTime endDate, Client client, List<Employee> team)
+        {
+            Name = name;
+            Description = description;
+            EndDate = endDate;
+            Client = client;
+            Team = team;
+        }
     }
 }

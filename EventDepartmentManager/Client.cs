@@ -9,5 +9,16 @@ namespace EventDepartmentManager
     class Client
     {
         public string Name { get; set; }
+
+        public Client()
+        {
+
+        }
+
+        public Client(string name)
+        {
+            Name = name;
+        }
+        
     }
 }

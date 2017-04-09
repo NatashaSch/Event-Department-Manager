@@ -8,9 +8,17 @@ namespace EventDepartmentManager
 {
     class Employee
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Login { get; set; }
-        
+        public Employee()
+        {
+
+        }
+
+        public Employee(string firstName, string lastName, string login)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Login = login;
+        }
+
     }
 }
