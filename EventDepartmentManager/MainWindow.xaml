@@ -5,8 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventDepartmentManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="750" Width="1320" Background="#f7fdff">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="8.5*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="NameOfProgram" TextWrapping="Wrap" Text="Event Department Manager" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="center" Width="450" Height="35" FontSize="25" TextAlignment="Center"  FontFamily="Times New Roman" FontWeight="Heavy" Foreground="#2a2b2b"/>
+        <Button x:Name="CurrentProjectBtn" Content="Текущие проекты" Grid.Row="1" Grid.Column="0" HorizontalAlignment="center" VerticalAlignment="center" Width="200" Height="50" FontFamily="Times New Roman" FontSize="20" Foreground="#2a2b2d" Background="#a1b8d1" Margin="49,28.667,49.667,32" Click="CurrentProject_Click"/>
+        <Button x:Name="CurrentClientsBtn" Content="Текущие клиенты" Grid.Row="2" Grid.Column="0" HorizontalAlignment="center" VerticalAlignment="center" Width="200" Height="50" FontFamily="Times New Roman" FontSize="20" Foreground="#2a2b2d" Background="#a1b8d1" Margin="49,31.667,49.667,29" Click="CurrentClients_Click"/>
+
+        <Grid Name="StartBlock" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Visibility="Visible"/>
+
+        <Grid Name="CurrentProjectBlock" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Visibility="Visible" Height="683" Margin="0.333,0,0.333,-0.333" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="192*"/>
+                <ColumnDefinition Width="62*"/>
+                <ColumnDefinition Width="253*"/>
+                <ColumnDefinition Width="253*"/>
+                <ColumnDefinition Width="254*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.75*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="AllPrTextBox" Grid.Row="1" Grid.RowSpan="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="center" Height="496" TextWrapping="Wrap" Text="" VerticalAlignment="center" Width="234" Margin="10,9.667,10,10.333"/>
+            <TextBlock x:Name="About" Grid.Row="1" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="center" TextWrapping="Wrap" Text="Описание проекта" VerticalAlignment="top" Margin="26.667,9.667,26.666,0"/>
+            <TextBlock x:Name="Manager" Grid.Row="2" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Руководитель проекта" VerticalAlignment="Center" Margin="26.667,22.667,26.666,23.333"/>
+            <TextBlock x:Name="Customer" Grid.Row="3" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Заказчик" VerticalAlignment="Center" Margin="26.667,22.667,26.666,23.333"/>
+            <TextBlock x:Name="Number" Grid.Row="4" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="center" TextWrapping="Wrap" Text="Количество человек" VerticalAlignment="Center" Margin="26.667,22.667,26.666,23.333"/>
+            <TextBlock x:Name="Money" Grid.Row="5" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Бюджет" VerticalAlignment="Center" Margin="26.667,22.667,26.666,23.333"/>
+            <TextBlock x:Name="Deadline" Grid.Row="6" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Сроки выполнения" VerticalAlignment="Center" Margin="26.667,22.667,26.666,23.333"/>
+            <TextBox x:Name="Info1" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Height="60" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="left"  Margin="10.334,9.667,0,0"/>
+            <TextBox x:Name="Info2" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" HorizontalAlignment="left"  Margin="10.334,22.667,0,23.333"/>
+            <TextBox x:Name="Info3" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" HorizontalAlignment="left"  Margin="10.334,22.667,0,23.333"/>
+            <TextBox x:Name="Info4" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" HorizontalAlignment="left"  Margin="10.334,22.667,0,23.333"/>
+            <TextBox x:Name="Info5" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" HorizontalAlignment="left"  Margin="10.334,22.667,0,23.333"/>
+            <TextBox x:Name="Info6" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" HorizontalAlignment="left"  Margin="10.334,22.667,0,23.333"/>
+            <TextBox x:Name="SearchText" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="172" Margin="10,0,0,0.333"/>
+            <Button x:Name="SearchButton" Grid.Column="1" Grid.Row="0" Background="White" Width="40" HorizontalAlignment="center" Margin="10,73,10,0.333">
+                <Image Source="C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\icon_search.png"></Image>
+            </Button>
+            <Button x:Name="ChangeProject" Content="Редактировать проект" Grid.Column="2" Grid.Row="7" FontFamily="Times New Roman" Foreground="#444444" FontSize="13" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150"  Height="43" Background="#c9d8e8" Margin="0,0,9.667,10.667"/>
+            <Button x:Name="AddProject" Content="Добавить проект" Grid.Column="3" Grid.Row="7" FontFamily="Times New Roman" Foreground="#444444" FontSize="13" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="43" Background="#c9d8e8" Margin="0,0,0,10.667"/>
+            <Button x:Name="DeleteProject" Content="Удалить проект" Grid.Column="4" Grid.Row="7" FontFamily="Times New Roman" Foreground="#444444" FontSize="13" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="43" Background="#c9d8e8" Margin="0,0,10,10.667"/>
+            <Button x:Name="Help" Grid.Column="0" Grid.Row="7" HorizontalAlignment="center" VerticalAlignment="center" Width="233" Grid.ColumnSpan="2" Height="43"  FontFamily="Times New Roman" Foreground="#444444" FontSize="13" Background="White" Margin="11,9.667,10,10.667">
+                <Image Source="C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\question.gif" Height="25"></Image>
+            </Button>
+        </Grid>
+
+        <Grid Name="CurrentClientsBlock" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="0.75*"/>
+                <RowDefinition Height="0.75*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.6*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.2*"/>
+                <ColumnDefinition Width="0.8*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AddClient" Grid.Column="0" Grid.Row="1" Content="Добавить клиента" FontFamily="Times New Roman" Foreground="#444444" Background="#c9d8e8" FontSize="15" HorizontalAlignment="center" VerticalAlignment="center" Width="200" Height="45"/>
+            <Button x:Name="DeleteClient" Grid.Column="0" Grid.Row="2" Content="Удалить клиента" FontFamily="Times New Roman" Foreground="#444444" Background="#c9d8e8" FontSize="15" HorizontalAlignment="center" VerticalAlignment="center" Width="200" Height="45"/>
+            <TextBox x:Name="ClientsTextBox" HorizontalAlignment="Left" Height="450" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="3" Width="300" FontFamily="Times New Roman" Foreground="#444444" FontSize="15" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="center" Margin="51.667,10.333,0,4.333"/>
+            <TextBox x:Name="SearchClients" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Height="40" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="253" FontFamily="Times New Roman" Foreground="#444444" FontSize="15" TextAlignment="Center" Margin="0,0,0,0.667"/>
+            <Button x:Name="SearchClientsBtn" Grid.Column="2" Grid.Row="0" HorizontalAlignment="left" VerticalAlignment="Bottom" Height="40" Background="White" Width="42" Margin="5,0,0,0.667">
+                <Image Source="C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\icon_search.png" Height="40"></Image>
+            </Button>
+            <Button x:Name="HelpClients" Grid.Column="1" Grid.Row="4" HorizontalAlignment="center" VerticalAlignment="center" Width="300" Grid.ColumnSpan="2" Height="43"  FontFamily="Times New Roman" Foreground="#444444" FontSize="13" Background="White" Margin="51.667,24.667,155.667,25">
+                <Image Source="C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\question.gif" Height="25"></Image>
+            </Button>
+
+        </Grid>
+
+
     </Grid>
 </Window>
