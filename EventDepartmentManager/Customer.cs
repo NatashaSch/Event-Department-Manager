@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace EventDepartmentManager
 {
+    [Serializable]
+    
     public class Customer
     {
+
         private string _name;
 
         public string Name
@@ -49,9 +52,9 @@ namespace EventDepartmentManager
 
         }
 
-        public string Show()
+        public Customer()
         {
-            return string.Format("{0}", Name);
+
         }
     }
 }

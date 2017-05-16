@@ -25,7 +25,7 @@
 
         <Grid Name="StartBlock" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Visibility="Visible"/>
 
-        <Grid Name="CurrentProjectBlock" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Visibility="Hidden" Height="683" Margin="0.333,0,0.333,-0.333" VerticalAlignment="Bottom">
+        <Grid Name="CurrentProjectBlock" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Visibility="Visible" Height="683" Margin="0.333,0,0.333,-0.333" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="192*"/>
                 <ColumnDefinition Width="62*"/>
@@ -70,7 +70,7 @@
             <ListBox x:Name="AllPrListBox" Grid.Row="1" Grid.RowSpan="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="center" Height="496" VerticalAlignment="center" Width="234" Margin="10,9.667,10,10.333"/>
         </Grid>
 
-        <Grid Name="CurrentClientsBlock" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Visibility="Visible">
+        <Grid Name="CurrentClientsBlock" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1.2*"/>
                 <RowDefinition Height="1*"/>
@@ -97,12 +97,12 @@
             <Button x:Name="HelpClients" Grid.Row="7" Grid.Column="0" HorizontalAlignment="center" VerticalAlignment="center" Width="281" Grid.ColumnSpan="3" Height="43"  FontFamily="Times New Roman" Foreground="#444444" FontSize="13" Background="White" Margin="10,8.667,245.667,11">
                 <Image Source="C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\question.gif" Height="25"></Image>
             </Button>
-            <ListBox x:Name="ClientsListBox" Height="437" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="6" FontFamily="Times New Roman" Foreground="#444444" FontSize="15" VerticalAlignment="center" Margin="8,55.333,245.667,10.333"/>
+            <ListBox x:Name="ClientsListBox" Height="437" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="6" FontFamily="Times New Roman" Foreground="#444444" FontSize="15" VerticalAlignment="center" Margin="8,55.333,245.667,10.333" SelectionChanged="ClientsListBox_SelectionChanged"/>
             <TextBlock x:Name="NameCustomer" Grid.Row="2" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="center" TextWrapping="Wrap" Text="Название компании" VerticalAlignment="top" Margin="26.667,9.667,26.666,0"/>
             <TextBlock x:Name="Site" Grid.Row="3" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="center" TextWrapping="Wrap" Text="Сайт" VerticalAlignment="top" Margin="26.667,9.667,26.666,0"/>
             <TextBlock x:Name="Representative" Grid.Row="4" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="center" TextWrapping="Wrap" Text="Представитель" VerticalAlignment="top" Margin="26.667,9.667,26.666,0"/>
             <TextBlock x:Name="PhoneNumber" Grid.Row="5" Grid.Column="2" Height="40" Width="200" FontFamily="Times New Roman" FontSize="17" TextAlignment="Center" FontWeight="Bold" HorizontalAlignment="center" TextWrapping="Wrap" Text="Телефон представителя" VerticalAlignment="top" Margin="26.667,9.667,26.666,0"/>
-            <TextBox x:Name="NameCustomerText" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="left"  Margin="19.333,10.333,0,0"/>
+            <TextBox x:Name="NameCustomerText"  Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="left"  Margin="19.333,10.333,0,0"/>
             <TextBox x:Name="SiteText" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="left"  Margin="19.333,10.333,0,0"/>
             <TextBox x:Name="RepresentativeText" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="left"  Margin="19.333,10.333,0,0"/>
             <TextBox x:Name="PhoneNumberText" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="left"  Margin="19.333,10.333,0,0"/>

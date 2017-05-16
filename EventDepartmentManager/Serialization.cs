@@ -8,59 +8,37 @@ using System.IO;
 
 namespace EventDepartmentManager
 {
-    class Serialization
+    public class Serialization
     {
-        static List<Project> projects = new List<Project>();
-        static XmlSerializer serializer = new XmlSerializer(typeof(List<Project>));
-        static string file = "../../data.xml";
+        //public static List<Project> pr = new List<Project>();
+        public static XmlSerializer serializer = new XmlSerializer(typeof(ListOfCustomers));
+        static string file = "../../data_customer.xml";
 
-        static void Main(string[] args)
-        {
-            projects.Add(new Project {n = In});
 
-            Deserialze();
-            Serialize();
 
-            foreach (A a in As)
-            {
-                Console.WriteLine(a.Name + " " + a.Age);
-            }
-
-            Console.WriteLine("Success");
-            Console.ReadKey();
-        }
-
-        private static void Serialize()
+        public static void Serialize(ListOfCustomers lc)
         {
             using (FileStream fs = new FileStream(file, FileMode.OpenOrCreate))
             {
-                serializer.Serialize(fs, As);
+                serializer.Serialize(fs, lc);
+
+                
             };
         }
 
-        private static void Deserialze()
+        public static ListOfCustomers Deserialze(ListOfCustomers lc)
         {
-            using (FileStream fs = new FileStream(file, FileMode.Open))
+            ListOfCustomers data = null;
+            using (FileStream fs = new FileStream(file, FileMode.OpenOrCreate))
             {
-                object data = serializer.Deserialize(fs);
-                if (data is List<A>)
-                    As.AddRange(data as List<A>);
-            }
+                data = (ListOfCustomers)serializer.Deserialize(fs);
+               
+            };
+            return data;
         }
     }
 
-    public class A
-    {
-        public B B { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
-
-    public class B
-    {
-
-    }
+  
 
 
-}
 }

@@ -59,15 +59,15 @@ namespace EventDepartmentManager
             set { _money = value; }
         }
 
-        private string _date;
+        private DateTime? _date;
 
-        public string Date
+        public DateTime? Date
         {
             get { return _date; }
             set { _date = value; }
         }
 
-        public Project(string n, string d, string e, Customer c, int p, double m, string date )
+        public Project(string n, string d, string e, Customer c, int p, double m, DateTime? dt )
         {
             Name = n;
             Description = d;
@@ -75,12 +75,14 @@ namespace EventDepartmentManager
             Customer = c;
             People = p;
             Money = m;
-            Date = d;
+            Date = dt;
         }
 
-        public string Show()
+        public Project()
         {
-            return string.Format(Name);
+
         }
+
+        
     }
 }

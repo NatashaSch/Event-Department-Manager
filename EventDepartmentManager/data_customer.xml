@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ListOfCustomers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Cust>
+    <Customer>
+      <Name>2134</Name>
+      <Site>1234</Site>
+      <Representative>2134</Representative>
+      <RepPhone>2134</RepPhone>
+    </Customer>
+    <Customer>
+      <Name>dfdf</Name>
+      <Site>dfdf</Site>
+      <Representative>dfdsf</Representative>
+      <RepPhone>56</RepPhone>
+    </Customer>
+    <Customer>
+      <Name>rgrdgg</Name>
+      <Site>fdgfdg</Site>
+      <Representative>fdgfdg</Representative>
+      <RepPhone>45436</RepPhone>
+    </Customer>
+    <Customer>
+      <Name>4yhh</Name>
+      <Site>rhfhf</Site>
+      <Representative>hfghfg</Representative>
+      <RepPhone>5453</RepPhone>
+    </Customer>
+    <Customer>
+      <Name>fgfdg</Name>
+      <Site>fgdgfd</Site>
+      <Representative>fdgdgd</Representative>
+      <RepPhone>455</RepPhone>
+    </Customer>
+  </Cust>
+</ListOfCustomers>
