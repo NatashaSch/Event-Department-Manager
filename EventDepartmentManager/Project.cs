@@ -7,6 +7,8 @@ using System.IO;
 
 namespace EventDepartmentManager
 {
+
+    [Serializable]
     public class Project
     {
         private string _name;
@@ -59,15 +61,15 @@ namespace EventDepartmentManager
             set { _money = value; }
         }
 
-        private DateTime? _date;
+        private string _date;
 
-        public DateTime? Date
+        public string Date
         {
             get { return _date; }
             set { _date = value; }
         }
 
-        public Project(string n, string d, string e, Customer c, int p, double m, DateTime? dt )
+        public Project(string n, string d, string e, Customer c, int p, double m, string dt )
         {
             Name = n;
             Description = d;

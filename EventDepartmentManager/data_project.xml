@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ListOfProjects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Proj>
+    <Project>
+      <Name>jjjjj</Name>
+      <Description>happy</Description>
+      <Employee>Ринат Забайдулин</Employee>
+      <Customer>
+        <Name>4yhh</Name>
+        <Site>rhfhf</Site>
+        <Representative>hfghfg</Representative>
+        <RepPhone>5453</RepPhone>
+      </Customer>
+      <People>99</People>
+      <Money>88</Money>
+      <Date>77</Date>
+    </Project>
+  </Proj>
+</ListOfProjects>/Name>
+      <Description>happy</Description>
+      <Employee>Ринат Забайдулин</Employee>
+      <Customer>
+        <Name>4yhh</Name>
+        <Site>rhfhf</Site>
+        <Representative>hfghfg</Representative>
+        <RepPhone>5453</RepPhone>
+      </Customer>
+      <People>99</People>
+      <Money>88</Money>
+      <Date>77</Date>
+    </Project>
+  </Proj>
+</ListOfProjects>
