@@ -28,8 +28,8 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button x:Name="AddClient" Grid.Column="3" Grid.Row="7" Content="Добавить заказчика" FontFamily="Times New Roman" Foreground="#444444" Background="#c9d8e8" FontSize="15" HorizontalAlignment="center" VerticalAlignment="center" Width="200" Height="43" Click="AddClient_Click" Margin="55.333,0.874,52.667,27"/>
-        <Button x:Name="DeleteClient" Grid.Column="4" Grid.Row="6" Content="Удалить заказчика" FontFamily="Times New Roman" Foreground="#444444" Background="#c9d8e8" FontSize="15" HorizontalAlignment="center" VerticalAlignment="Bottom" Width="199" Height="43" Margin="0,0,23,28" Click="DeleteClient_Click" Grid.RowSpan="2"/>
+        <Button x:Name="AddClient" Grid.Column="3" Grid.Row="7" Content="Добавить заказчика" FontFamily="Times New Roman" Foreground="#444444" Background="#c9d8e8" FontSize="15" HorizontalAlignment="center" VerticalAlignment="center" Width="170" Height="43" Click="AddClient_Click" Margin="55.333,0.874,52.667,27"/>
+        <Button x:Name="DeleteClient" Grid.Column="4" Grid.Row="6" Content="Удалить заказчика" FontFamily="Times New Roman" Foreground="#444444" Background="#c9d8e8" FontSize="15" HorizontalAlignment="center" VerticalAlignment="Bottom" Width="170" Height="43" Margin="0,0,52,28" Click="DeleteClient_Click" Grid.RowSpan="2"/>
         <TextBox x:Name="SearchClients" Height="40" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Margin="26,0,0,10" Grid.Column="1" HorizontalAlignment="Left" Width="201" />
         <Button x:Name="SearchClientsBtn" Click="SearchClientsBtn_Click" Grid.Column="1" Grid.Row="0" Background="White" Margin="232,62,8.333,10">
             <Image Source="C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\icon_search.png" Height="30" Width="18"></Image>

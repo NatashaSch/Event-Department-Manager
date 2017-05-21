@@ -2,32 +2,46 @@
 <ListOfProjects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Proj>
     <Project>
-      <Name>jjjjj</Name>
-      <Description>happy</Description>
-      <Employee>Ринат Забайдулин</Employee>
+      <Name>45435</Name>
+      <Description>43535</Description>
+      <Employee>Наталья Пестова</Employee>
       <Customer>
         <Name>4yhh</Name>
         <Site>rhfhf</Site>
         <Representative>hfghfg</Representative>
         <RepPhone>5453</RepPhone>
       </Customer>
-      <People>99</People>
-      <Money>88</Money>
-      <Date>77</Date>
+      <People>43543</People>
+      <Money>43545</Money>
+      <Date>435435</Date>
     </Project>
-  </Proj>
-</ListOfProjects>/Name>
-      <Description>happy</Description>
-      <Employee>Ринат Забайдулин</Employee>
+    <Project>
+      <Name>564656546</Name>
+      <Description>45654656</Description>
+      <Employee>Анна Подображных</Employee>
       <Customer>
-        <Name>4yhh</Name>
-        <Site>rhfhf</Site>
-        <Representative>hfghfg</Representative>
-        <RepPhone>5453</RepPhone>
+        <Name>43545</Name>
+        <Site>435435</Site>
+        <Representative>435435</Representative>
+        <RepPhone>435345</RepPhone>
       </Customer>
-      <People>99</People>
-      <Money>88</Money>
-      <Date>77</Date>
+      <People>5654645</People>
+      <Money>5654656</Money>
+      <Date>56464654</Date>
+    </Project>
+    <Project>
+      <Name>rgtg</Name>
+      <Description>uuuuuuuuuuuuuuuuuuuuuuu</Description>
+      <Employee>Анна Подображных</Employee>
+      <Customer>
+        <Name>4545</Name>
+        <Site>fgbgb</Site>
+        <Representative>gfbgfb</Representative>
+        <RepPhone>445435</RepPhone>
+      </Customer>
+      <People>4545</People>
+      <Money>4545</Money>
+      <Date>4234234</Date>
     </Project>
   </Proj>
 </ListOfProjects>

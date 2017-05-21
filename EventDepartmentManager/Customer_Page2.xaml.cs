@@ -42,7 +42,7 @@ namespace EventDepartmentManager
 
             }
 
-            
+
 
         }
 
@@ -54,35 +54,43 @@ namespace EventDepartmentManager
 
             Serialization.Serialize(lc);
 
-            MessageBox.Show("Сохранено!");
-
             ClientsListBox.Items.Clear();
 
-            lc.Cust = new List<Customer>();
+            //lc.Cust = new List<Customer>();
 
             lc = Serialization.Deserialze(lc);
+
+            NameCustomerText.Clear();
+            SiteText.Clear();
+            RepresentativeText.Clear();
+            PhoneNumberText.Clear();
+
+
             foreach (var item in lc.Cust)
             {
                 ClientsListBox.Items.Add(item.Name);
 
 
             }
+            MessageBox.Show("Сохранено!");
         }
 
         private void ClientsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach (var cs in lc.Cust)
             {
-                if (ClientsListBox.SelectedItem.ToString() == cs.Name)
+                if (ClientsListBox.SelectedItem != null)
                 {
-                    NameCustomerText.Text = cs.Name;
-                    SiteText.Text = cs.Site;
-                    RepresentativeText.Text = cs.Representative;
-                    PhoneNumberText.Text = cs.RepPhone.ToString();
+                    if (ClientsListBox.SelectedItem.ToString() == cs.Name)
+                    {
+                        NameCustomerText.Text = cs.Name;
+                        SiteText.Text = cs.Site;
+                        RepresentativeText.Text = cs.Representative;
+                        PhoneNumberText.Text = cs.RepPhone.ToString();
 
 
+                    }
                 }
-
 
             }
         }
@@ -112,6 +120,48 @@ namespace EventDepartmentManager
 
         private void DeleteClient_Click(object sender, RoutedEventArgs e)
         {
+
+            foreach (Customer cs in lc.Cust)
+            {
+                if (ClientsListBox.SelectedItem != null)
+                {
+                    if (cs.Name == ClientsListBox.SelectedItem.ToString())
+                    {
+
+                        NameCustomerText.Text = cs.Name;
+                        SiteText.Text = cs.Site;
+                        RepresentativeText.Text = cs.Representative;
+                        PhoneNumberText.Text = cs.RepPhone.ToString();
+
+
+                        lc.Cust.Remove(cs);
+                        break;
+                    }
+                }
+            }
+                Serialization.Serialize(lc);
+
+
+
+                ClientsListBox.Items.Clear();
+
+                foreach (var item in lc.Cust)
+                {
+                    ClientsListBox.Items.Add(item.Name);
+                }
+
+
+
+                NameCustomerText.Clear();
+                SiteText.Clear();
+                RepresentativeText.Clear();
+                PhoneNumberText.Clear();
+
+                MessageBox.Show("Удалено!");
+
+            
+
+
 
         }
 

@@ -18,7 +18,7 @@ namespace EventDepartmentManager
 
         public static void Serialize(ListOfCustomers lc)
         {
-            using (FileStream fs = new FileStream(file, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(file, FileMode.Create))
             {
                 serializer.Serialize(fs, lc);
 
@@ -29,10 +29,10 @@ namespace EventDepartmentManager
         public static ListOfCustomers Deserialze(ListOfCustomers lc)
         {
             ListOfCustomers data = null;
-            using (FileStream fs = new FileStream(file, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(file, FileMode.Open))
             {
                 data = (ListOfCustomers)serializer.Deserialize(fs);
-               
+
             };
             return data;
         }
@@ -42,7 +42,7 @@ namespace EventDepartmentManager
         //сериализация и десериализация проектов
         public static void Serialize_proj(ListOfProjects lp)
         {
-            using (FileStream fs = new FileStream(file_proj, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(file_proj, FileMode.Create))
             {
                 serializer_proj.Serialize(fs, lp);
 
@@ -52,7 +52,7 @@ namespace EventDepartmentManager
         public static ListOfProjects Deserialze_proj(ListOfProjects lp)
         {
             ListOfProjects data_proj = null;
-            using (FileStream fs = new FileStream(file_proj, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(file_proj, FileMode.Open))
             {
                 data_proj = (ListOfProjects)serializer_proj.Deserialize(fs);
 

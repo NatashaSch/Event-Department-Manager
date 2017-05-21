@@ -33,7 +33,7 @@ namespace EventDepartmentManager
             InitializeComponent();
 
             //десериализация для проектов
-            lp.Proj = new List<Project>();
+            //lp.Proj = new List<Project>();
 
             lp = Serialization.Deserialze_proj(lp);
             foreach (var item in lp.Proj)
@@ -101,7 +101,7 @@ namespace EventDepartmentManager
             lc = Serialization.Deserialze(lc);
             foreach (var item in lc.Cust)
             {
-                if (CustomerComboBox.SelectedItem.ToString() == item.Name)
+                if (CustomerComboBox.SelectedItem.ToString()== item.Name)
                 {
                     customer = item;
                 }
@@ -140,15 +140,19 @@ namespace EventDepartmentManager
                     customer = item;
                 }
             }
-            lp.Proj = new List<Project>();
 
-            lp = Serialization.Deserialze_proj(lp);
+
+            //lp.Proj = new List<Project>();
+
+            
 
             Project proj = new Project(NameText.Text, Description.Text, ManagerComboBox.Text, customer, int.Parse(People.Text), int.Parse(Money.Text), Date.Text);
 
             lp.Proj.Add(proj);
 
             Serialization.Serialize_proj(lp);
+
+            lp = Serialization.Deserialze_proj(lp);
 
             MessageBox.Show("Сохранено!");
 
@@ -245,18 +249,17 @@ namespace EventDepartmentManager
                         lp.Proj.Remove(pr);
                         break;
                     }
+
                 }
+            }
                 Serialization.Serialize_proj(lp);
 
-
-
                 AllPrListBox.Items.Clear();
+
                 foreach (var item in lp.Proj)
                 {
                     AllPrListBox.Items.Add(item.Name);
                 }
-
-
 
                 NameText.Clear();
                 Description.Clear();
@@ -266,9 +269,10 @@ namespace EventDepartmentManager
                 Money.Clear();
                 Date.Clear();
 
-
                 MessageBox.Show("Удалено!");
-            }
+        }
+
+            
         }
     }
-}
+
