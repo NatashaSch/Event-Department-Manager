@@ -16,7 +16,12 @@ namespace EventDepartmentManager
         public string Name
         {
             get { return _name; }
-            set { _name = value; }
+            set {
+                    if (!String.IsNullOrWhiteSpace(value))
+                        _name = value;
+                    else
+                        throw new Exception();
+                }
         }
 
         private string _description;
@@ -24,7 +29,12 @@ namespace EventDepartmentManager
         public string Description
         {
             get { return _description; }
-            set { _description = value; }
+            set {
+                if (!String.IsNullOrWhiteSpace(value))
+                    _description = value;
+                else
+                    throw new Exception();
+                }
         }
 
         private string _employee;
@@ -32,7 +42,12 @@ namespace EventDepartmentManager
         public string Employee
         {
             get { return _employee; }
-            set { _employee = value; }
+            set {
+                if (!String.IsNullOrWhiteSpace(value))
+                    _employee = value;
+                else
+                    throw new Exception();
+                }
         }
 
         private Customer _customer;
@@ -50,7 +65,12 @@ namespace EventDepartmentManager
         public int People
         {
             get { return _people; }
-            set { _people = value; }
+            set {
+                if (value >= 0)
+                    _people = value;
+                else
+                    throw new Exception();
+            }
         }
 
         private double _money;
@@ -58,7 +78,12 @@ namespace EventDepartmentManager
         public double Money
         {
             get { return _money; }
-            set { _money = value; }
+            set { 
+                    if (value >= 0)
+                         _money = value;
+                    else
+                        throw new Exception();
+                }
         }
 
         private string _date;
@@ -66,8 +91,15 @@ namespace EventDepartmentManager
         public string Date
         {
             get { return _date; }
-            set { _date = value; }
+            set {
+               
+                if (!String.IsNullOrWhiteSpace(value))
+                    _date = value;
+                else
+                    throw new Exception();
+            }
         }
+        
 
         public Project(string n, string d, string e, Customer c, int p, double m, string dt )
         {

@@ -1,0 +1,13 @@
+﻿<Window x:Class="EventDepartmentManager.Info_proj"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventDepartmentManager"
+        mc:Ignorable="d"
+        Title="Info_proj" Height="400" Width="350" Background="#f7fdff">
+    <Grid>
+        <TextBlock x:Name="textBlock" TextAlignment="Center"  TextWrapping="Wrap" Width="300" Height="300" Text="На данной странице вы можете получить информацию по интересующему Вас проекту. Для редактирования проекта выбирете нужный проект из приведенного списка/введите в поиск, измените данные в нужной графе, нажмите кнопку «Редактировать». Для удаления проекта: те же действия + кнопка «Удалить». Для добавления проекта: введите данные в пустые поля + кнопка «Сохранить»  " HorizontalAlignment="Center" VerticalAlignment="center" FontFamily="Times New Roman" FontSize="17"  />
+
+    </Grid>
+</Window>

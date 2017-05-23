@@ -48,97 +48,133 @@ namespace EventDepartmentManager
 
         private void AddClient_Click(object sender, RoutedEventArgs e)
         {
-            Customer cust = new Customer(NameCustomerText.Text, SiteText.Text, RepresentativeText.Text, int.Parse(PhoneNumberText.Text));
-
-            lc.Cust.Add(cust);
-
-            Serialization.Serialize(lc);
-
-            ClientsListBox.Items.Clear();
-
-            //lc.Cust = new List<Customer>();
-
-            lc = Serialization.Deserialze(lc);
-
-            NameCustomerText.Clear();
-            SiteText.Clear();
-            RepresentativeText.Clear();
-            PhoneNumberText.Clear();
-
-
-            foreach (var item in lc.Cust)
+            try
             {
-                ClientsListBox.Items.Add(item.Name);
+
+                Customer cust = new Customer(NameCustomerText.Text, SiteText.Text, RepresentativeText.Text, PhoneNumberText.Text);
+
+                lc.Cust.Add(cust);
+                Log.Logging("Добавлен клиент: " + cust.Name);
+                Serialization.Serialize(lc);
+
+                ClientsListBox.Items.Clear();
 
 
+                lc = Serialization.Deserialze(lc);
+
+                NameCustomerText.Clear();
+                SiteText.Clear();
+                RepresentativeText.Clear();
+                PhoneNumberText.Clear();
+
+
+                foreach (var item in lc.Cust)
+                {
+                    ClientsListBox.Items.Add(item.Name);
+
+
+                }
+                MessageBox.Show("Сохранено!");
             }
-            MessageBox.Show("Сохранено!");
-        }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка" + ex);
+            }
+          }
 
         private void ClientsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (var cs in lc.Cust)
+            try
             {
-                if (ClientsListBox.SelectedItem != null)
-                {
-                    if (ClientsListBox.SelectedItem.ToString() == cs.Name)
-                    {
-                        NameCustomerText.Text = cs.Name;
-                        SiteText.Text = cs.Site;
-                        RepresentativeText.Text = cs.Representative;
-                        PhoneNumberText.Text = cs.RepPhone.ToString();
 
+                foreach (var cs in lc.Cust)
+                {
+                    if (ClientsListBox.SelectedItem != null)
+                    {
+                        if (ClientsListBox.SelectedItem.ToString() == cs.Name)
+                        {
+                            NameCustomerText.Text = cs.Name;
+                            SiteText.Text = cs.Site;
+                            RepresentativeText.Text = cs.Representative;
+                            PhoneNumberText.Text = cs.RepPhone.ToString();
+                        }
 
                     }
+
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка" + ex);
 
             }
+            
+
         }
 
         private void SearchClientsBtn_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Customer cs in lc.Cust)
+            try
             {
-                if (cs.Name == SearchClients.Text)
+
+                foreach (Customer cs in lc.Cust)
                 {
-                    NameCustomerText.Text = cs.Name;
-                    SiteText.Text = cs.Site;
-                    RepresentativeText.Text = cs.Representative;
-                    PhoneNumberText.Text = cs.RepPhone.ToString();
-                    exist_c = true;
-                    break;
-                }
-
-            }
-            if (!exist_c)
-            {
-                MessageBox.Show("Такой заказчик не найден");
-
-            }
-            exist_c = false;
-        }
-
-        private void DeleteClient_Click(object sender, RoutedEventArgs e)
-        {
-
-            foreach (Customer cs in lc.Cust)
-            {
-                if (ClientsListBox.SelectedItem != null)
-                {
-                    if (cs.Name == ClientsListBox.SelectedItem.ToString())
+                    if (cs.Name == SearchClients.Text)
                     {
-
                         NameCustomerText.Text = cs.Name;
                         SiteText.Text = cs.Site;
                         RepresentativeText.Text = cs.Representative;
                         PhoneNumberText.Text = cs.RepPhone.ToString();
-
-
-                        lc.Cust.Remove(cs);
+                        exist_c = true;
+                        
                         break;
                     }
+                    Log.Logging("Произведен поиск клиента: " + cs.Name);
                 }
+                if (!exist_c)
+                {
+                    MessageBox.Show("Такой заказчик не найден");
+                    Log.Logging("Ошибка: искомого заказчика не существует");
+
+                }
+                exist_c = false;
+
+                SearchClients.Clear();
+                
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка: " + ex);
+            }
+        }
+
+        private void DeleteClient_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                foreach (Customer cs in lc.Cust)
+                {
+                    if (ClientsListBox.SelectedItem != null)
+                    {
+                        if (cs.Name == ClientsListBox.SelectedItem.ToString())
+                        {
+
+                            NameCustomerText.Text = cs.Name;
+                            SiteText.Text = cs.Site;
+                            RepresentativeText.Text = cs.Representative;
+                            PhoneNumberText.Text = cs.RepPhone.ToString();
+
+                            Log.Logging("Удален клиент: " + cs.Name);
+                            lc.Cust.Remove(cs);
+
+                            break;
+                        }
+                    }
+                }
                 Serialization.Serialize(lc);
 
 
@@ -159,12 +195,18 @@ namespace EventDepartmentManager
 
                 MessageBox.Show("Удалено!");
 
-            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка: " + ex);
+            }
+         }
 
-
-
+        private void HelpClients_Click(object sender, RoutedEventArgs e)
+        {
+            Info_customer wnd = new Info_customer();
+            wnd.Show();
         }
-
-    
     }
 }

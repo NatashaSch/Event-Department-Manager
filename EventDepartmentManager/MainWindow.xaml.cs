@@ -27,19 +27,14 @@ namespace EventDepartmentManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        public bool exist_p = true;
-        public bool exist_c = true;
-        public List<Manager> managers = new List<Manager>();
-        public ListOfCustomers lc = new ListOfCustomers();
-        public ListOfProjects lp = new ListOfProjects();
 
 
 
         public MainWindow()
         {
+
             InitializeComponent();
-           
-        
+            Log.Logging("Выполнен вход в систему" + " " + "Время: " + DateTime.Now.Second);
         }
 
 
@@ -48,19 +43,12 @@ namespace EventDepartmentManager
 
         private void CurrentProject_Click(object sender, RoutedEventArgs e)
         {
-            //StartButtons.Visibility = Visibility.Hidden;
-            //CurrentClientsBlock.Visibility = Visibility.Hidden;
-            //CurrentProjectBlock.Visibility = Visibility.Visible;
-
+          
             MainPage.Content = new Projects_Page1();
         }
 
         private void CurrentClients_Click(object sender, RoutedEventArgs e)
         {
-            //StartButtons.Visibility = Visibility.Hidden;
-            //CurrentProjectBlock.Visibility = Visibility.Hidden;
-            //CurrentClientsBlock.Visibility = Visibility.Visible;
-
             MainPage.Content = new Customer_Page2();
         }
 

@@ -2,12 +2,6 @@
 <ListOfCustomers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Cust>
     <Customer>
-      <Name>rgrdgg</Name>
-      <Site>fdgfdg</Site>
-      <Representative>fdgfdg</Representative>
-      <RepPhone>45436</RepPhone>
-    </Customer>
-    <Customer>
       <Name>4yhh</Name>
       <Site>rhfhf</Site>
       <Representative>hfghfg</Representative>
@@ -18,6 +12,12 @@
       <Site>уауыа</Site>
       <Representative>ыауыаы</Representative>
       <RepPhone>45353535</RepPhone>
+    </Customer>
+    <Customer>
+      <Name>gdfgdfg</Name>
+      <Site>fgfgfdg</Site>
+      <Representative>fdgdfgfdg</Representative>
+      <RepPhone>454545345345</RepPhone>
     </Customer>
   </Cust>
 </ListOfCustomers>

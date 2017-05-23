@@ -58,14 +58,32 @@
     <Compile Include="Customer_Page2.xaml.cs">
       <DependentUpon>Customer_Page2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Info_customer.xaml.cs">
+      <DependentUpon>Info_customer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Info_proj.xaml.cs">
+      <DependentUpon>Info_proj.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListOfCustomers.cs" />
     <Compile Include="ListOfProjects.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="Password.xaml.cs">
+      <DependentUpon>Password.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Projects_Page1.xaml.cs">
       <DependentUpon>Projects_Page1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Serialization.cs" />
     <Page Include="Customer_Page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Info_customer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Info_proj.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,6 +100,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Password.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Projects_Page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

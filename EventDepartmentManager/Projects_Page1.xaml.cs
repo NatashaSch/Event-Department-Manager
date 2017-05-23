@@ -32,186 +32,185 @@ namespace EventDepartmentManager
         {
             InitializeComponent();
 
-            //десериализация для проектов
-            //lp.Proj = new List<Project>();
-
-            lp = Serialization.Deserialze_proj(lp);
-            foreach (var item in lp.Proj)
+            try
             {
-                AllPrListBox.Items.Add(item.Name);
 
-            }
+                //десериализация для проектов
+                //lp.Proj = new List<Project>();
 
-            //чтение из текстового файла и вывод информации в поле "Руководитель"
-            using (FileStream fs = new FileStream(@"../../input_managers.txt", FileMode.Open, FileAccess.Read))
-            {
-                string[] data_txt;
-                Manager mg;
-                StreamReader sr = new StreamReader(fs, Encoding.Default);
-
-                while (!sr.EndOfStream)
+                lp = Serialization.Deserialze_proj(lp);
+                foreach (var item in lp.Proj)
                 {
-                    data_txt = sr.ReadLine().Split(' ');
-                    mg = new Manager(data_txt[0], data_txt[1]);
-                    managers.Add(mg);
+                    AllPrListBox.Items.Add(item.Name);
+
                 }
 
+                //чтение из текстового файла и вывод информации в поле "Руководитель"
+                using (FileStream fs = new FileStream(@"../../input_managers.txt", FileMode.Open, FileAccess.Read))
+                {
+                    string[] data_txt;
+                    Manager mg;
+                    StreamReader sr = new StreamReader(fs, Encoding.Default);
+
+                    while (!sr.EndOfStream)
+                    {
+                        data_txt = sr.ReadLine().Split(' ');
+                        mg = new Manager(data_txt[0], data_txt[1]);
+                        managers.Add(mg);
+                    }
 
 
-                sr.Close();
-                fs.Close();
+
+                    sr.Close();
+                    fs.Close();
+                }
+
+                foreach (Manager mg in managers)
+                {
+                    string emp = mg._name + ' ' + mg._lastName;
+                    ManagerComboBox.Items.Add(emp);
+                }
+
+                //вывод информации в поле "Заказчик"
+
+                lc.Cust = new List<Customer>();
+
+                lc = Serialization.Deserialze(lc);
+                foreach (var item in lc.Cust)
+                {
+                    CustomerComboBox.Items.Add(item.Name);
+
+
+                }
             }
-
-            foreach (Manager mg in managers)
+            catch (Exception ex)
             {
-                string emp = mg._name + ' ' + mg._lastName;
-                ManagerComboBox.Items.Add(emp);
-            }
-
-            //вывод информации в поле "Заказчик"
-
-            lc.Cust = new List<Customer>();
-
-            lc = Serialization.Deserialze(lc);
-            foreach (var item in lc.Cust)
-            {
-                CustomerComboBox.Items.Add(item.Name);
-
-
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка: " + ex);
             }
         }
 
         private void ChangeProject_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var pr in lp.Proj)
+            try
             {
-                if (AllPrListBox.SelectedItem.ToString() == pr.Name)
+
+                foreach (var pr in lp.Proj)
                 {
-                    int k = lp.Proj.IndexOf(pr);
-                    lp.Proj.RemoveAt(k);
-                    break;
+                    if (AllPrListBox.SelectedItem.ToString() == pr.Name)
+                    {
+                        int k = lp.Proj.IndexOf(pr);
+                        lp.Proj.RemoveAt(k);
+                        break;
+                    }
+
+
+                }
+
+                Customer customer = null;
+                lc.Cust = new List<Customer>();
+
+                lc = Serialization.Deserialze(lc);
+                foreach (var item in lc.Cust)
+                {
+                    if (CustomerComboBox.SelectedItem.ToString() == item.Name)
+                    {
+                        customer = item;
+                    }
+                }
+
+
+                Project proj = new Project(NameText.Text, Description.Text, ManagerComboBox.Text, customer, int.Parse(People.Text), int.Parse(Money.Text), Date.Text);
+
+                
+
+                lp.Proj.Add(proj);
+                Log.Logging("Изменен проект: " + proj.Name);
+                Serialization.Serialize_proj(lp);
+
+               
+                MessageBox.Show("Сохранено!");
+
+                AllPrListBox.Items.Clear();
+                foreach (var item in lp.Proj)
+                {
+                    AllPrListBox.Items.Add(item.Name);
                 }
 
 
             }
-
-            Customer customer = null;
-            lc.Cust = new List<Customer>();
-
-            lc = Serialization.Deserialze(lc);
-            foreach (var item in lc.Cust)
+            catch (Exception ex)
             {
-                if (CustomerComboBox.SelectedItem.ToString()== item.Name)
-                {
-                    customer = item;
-                }
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка: " + ex);
             }
-
-
-            Project proj = new Project(NameText.Text, Description.Text, ManagerComboBox.Text, customer, int.Parse(People.Text), int.Parse(Money.Text), Date.Text);
-
-            lp.Proj.Add(proj);
-            Serialization.Serialize_proj(lp);
-
-            MessageBox.Show("Сохранено!");
-
-            AllPrListBox.Items.Clear();
-            foreach (var item in lp.Proj)
-            {
-                AllPrListBox.Items.Add(item.Name);
-            }
-
-
-
 
         }
 
         private void AddProject_Click(object sender, RoutedEventArgs e)
         {
-
-            Customer customer = null;
-            lc.Cust = new List<Customer>();
-
-            lc = Serialization.Deserialze(lc);
-            foreach (var item in lc.Cust)
+            try
             {
-                if (CustomerComboBox.SelectedItem.ToString() == item.Name)
+
+                Customer customer = null;
+                lc.Cust = new List<Customer>();
+
+                lc = Serialization.Deserialze(lc);
+                foreach (var item in lc.Cust)
                 {
-                    customer = item;
+                    if (CustomerComboBox.SelectedItem.ToString() == item.Name)
+                    {
+                        customer = item;
+                    }
                 }
+
+
+
+                Project proj = new Project(NameText.Text, Description.Text, ManagerComboBox.Text, customer, int.Parse(People.Text), int.Parse(Money.Text), Date.Text);
+
+                lp.Proj.Add(proj);
+                Log.Logging("Добавлен проект: " + proj.Name);
+
+                Serialization.Serialize_proj(lp);
+
+                lp = Serialization.Deserialze_proj(lp);
+
+                MessageBox.Show("Сохранено!");
+                
+
+                NameText.Text = "";
+                Description.Text = "";
+                ManagerComboBox.Text = "";
+                CustomerComboBox.Text = "";
+                People.Text = "";
+                Money.Text = "";
+                Date.Text = "";
+
+                AllPrListBox.Items.Clear();
+                foreach (var item in lp.Proj)
+                {
+                    AllPrListBox.Items.Add(item.Name);
+                }
+
             }
-
-
-            //lp.Proj = new List<Project>();
-
-            
-
-            Project proj = new Project(NameText.Text, Description.Text, ManagerComboBox.Text, customer, int.Parse(People.Text), int.Parse(Money.Text), Date.Text);
-
-            lp.Proj.Add(proj);
-
-            Serialization.Serialize_proj(lp);
-
-            lp = Serialization.Deserialze_proj(lp);
-
-            MessageBox.Show("Сохранено!");
-
-            NameText.Text = "";
-            Description.Text = "";
-            ManagerComboBox.Text = "";
-            CustomerComboBox.Text = "";
-            People.Text = "";
-            Money.Text = "";
-            Date.Text = "";
-
-            AllPrListBox.Items.Clear();
-            foreach (var item in lp.Proj)
+            catch (Exception ex)
             {
-                AllPrListBox.Items.Add(item.Name);
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка: " + ex);
             }
-
-
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-
-            foreach (Project pr in lp.Proj)
+            try
             {
 
-                if (pr.Name == SearchProject.Text)
+                foreach (Project pr in lp.Proj)
                 {
 
-                    NameText.Text = pr.Name;
-                    Description.Text = pr.Description;
-                    ManagerComboBox.Text = pr.Employee;
-                    CustomerComboBox.Text = pr.Customer.Name;
-                    People.Text = pr.People.ToString();
-                    Money.Text = pr.Money.ToString();
-                    Date.Text = pr.Date.ToString();
-                    exist_p = true;
-                    break;
-                }
-
-
-
-            }
-            if (!exist_p)
-            {
-                MessageBox.Show("Такой заказчик не найден");
-            }
-            exist_p = false;
-        }
-
-        private void AllPrListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            foreach (var pr in lp.Proj)
-            {
-                if (AllPrListBox.SelectedItem != null)
-                {
-                    if (AllPrListBox.SelectedItem.ToString() == pr.Name)
+                    if (pr.Name == SearchProject.Text)
                     {
+
                         NameText.Text = pr.Name;
                         Description.Text = pr.Description;
                         ManagerComboBox.Text = pr.Employee;
@@ -219,10 +218,59 @@ namespace EventDepartmentManager
                         People.Text = pr.People.ToString();
                         Money.Text = pr.Money.ToString();
                         Date.Text = pr.Date.ToString();
+                        exist_p = true;
+                       
                         break;
                     }
-                }
+                    Log.Logging("Выполнен поиск проекта: " + pr.Name);
 
+
+                }
+                if (!exist_p)
+                {
+                    MessageBox.Show("Такой заказчик не найден");
+                }
+                exist_p = false;
+
+                SearchProject.Clear();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка: " + ex);
+            }
+
+        }
+
+        private void AllPrListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+
+                foreach (var pr in lp.Proj)
+                {
+                    if (AllPrListBox.SelectedItem != null)
+                    {
+                        if (AllPrListBox.SelectedItem.ToString() == pr.Name)
+                        {
+                            NameText.Text = pr.Name;
+                            Description.Text = pr.Description;
+                            ManagerComboBox.Text = pr.Employee;
+                            CustomerComboBox.Text = pr.Customer.Name;
+                            People.Text = pr.People.ToString();
+                            Money.Text = pr.Money.ToString();
+                            Date.Text = pr.Date.ToString();
+                            break;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка: " + ex);
             }
 
         }
@@ -230,28 +278,32 @@ namespace EventDepartmentManager
 
         private void DeleteProject_Click(object sender, RoutedEventArgs e)
         {
-
-            foreach (Project pr in lp.Proj)
+            try
             {
-                if (AllPrListBox.SelectedItem != null)
+
+                foreach (Project pr in lp.Proj)
                 {
-                    if (pr.Name == AllPrListBox.SelectedItem.ToString())
+                    if (AllPrListBox.SelectedItem != null)
                     {
+                        if (pr.Name == AllPrListBox.SelectedItem.ToString())
+                        {
 
-                        NameText.Text = pr.Name;
-                        Description.Text = pr.Description;
-                        ManagerComboBox.Text = pr.Employee;
-                        CustomerComboBox.Text = pr.Customer.Name;
-                        People.Text = pr.People.ToString();
-                        Money.Text = pr.Money.ToString();
-                        Date.Text = pr.Date.ToString();
+                            NameText.Text = pr.Name;
+                            Description.Text = pr.Description;
+                            ManagerComboBox.Text = pr.Employee;
+                            CustomerComboBox.Text = pr.Customer.Name;
+                            People.Text = pr.People.ToString();
+                            Money.Text = pr.Money.ToString();
+                            Date.Text = pr.Date.ToString();
 
-                        lp.Proj.Remove(pr);
-                        break;
+                            
+
+                            lp.Proj.Remove(pr);
+                            break;
+                        }
+                        Log.Logging("Удален проект: " + pr.Name);
                     }
-
                 }
-            }
                 Serialization.Serialize_proj(lp);
 
                 AllPrListBox.Items.Clear();
@@ -269,10 +321,23 @@ namespace EventDepartmentManager
                 Money.Clear();
                 Date.Clear();
 
+             
                 MessageBox.Show("Удалено!");
+         
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Log.Logging("Ошибка: " + ex);
+            }
+
         }
 
-            
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+            Info_proj wnd = new Info_proj();
+            wnd.Show();
         }
     }
-
+}

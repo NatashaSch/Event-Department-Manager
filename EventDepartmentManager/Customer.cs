@@ -16,7 +16,12 @@ namespace EventDepartmentManager
         public string Name
         {
             get { return _name; }
-            set { _name = value; }
+            set {
+                    if (!String.IsNullOrWhiteSpace(value))
+                        _name = value;
+                    else
+                        throw new Exception();
+                 }
         }
 
         private string _site;
@@ -24,7 +29,12 @@ namespace EventDepartmentManager
         public string Site
         {
             get { return _site; }
-            set { _site = value; }
+            set { 
+                if (!String.IsNullOrWhiteSpace(value))
+                    _site = value;
+                else
+                    throw new Exception();
+                 }
         }
 
         private string _representative;
@@ -32,18 +42,29 @@ namespace EventDepartmentManager
         public string Representative
         {
             get { return _representative; }
-            set { _representative = value; }
+            set { 
+                if (!String.IsNullOrWhiteSpace(value))
+                    _representative = value;
+                else
+                    throw new Exception();
+                  }
         }
 
-        private int _repPhone;
+        private string _repPhone;
 
-        public int RepPhone
+        public string RepPhone
         {
             get { return _repPhone; }
-            set { _repPhone = value; }
+            set {
+                if (!String.IsNullOrWhiteSpace(value))
+                    _repPhone = value;
+                else
+                    throw new Exception();
+                 }
         }
+        
 
-        public Customer(string n, string s, string r, int rP)
+        public Customer(string n, string s, string r, string rP)
         {
             Name = n;
             Site = s;

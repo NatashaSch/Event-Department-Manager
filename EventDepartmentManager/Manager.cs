@@ -14,7 +14,12 @@ namespace EventDepartmentManager
         public string LastName
         {
             get { return _lastName; }
-            set { _lastName = value; }
+            set { 
+                if (!String.IsNullOrWhiteSpace(value))
+                    _lastName = value;
+                else
+                    throw new Exception();
+                }
         }
 
         public string _name;
@@ -22,7 +27,12 @@ namespace EventDepartmentManager
         public string Name
         {
             get { return _name; }
-            set { _name = value; }
+            set { 
+                if (!String.IsNullOrWhiteSpace(value))
+                    _name = value;
+                else
+                    throw new Exception();
+                 }
         }
 
         public Manager(string lN, string n)

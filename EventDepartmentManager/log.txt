@@ -1,0 +1,5 @@
+Удален клиент: 4545435
+564656546
+t
+ Ссылка на объект не указывает на экземпляр объекта.
+   в EventDepartmentManager.Projects_Page1.ChangeProject_Click(Object sender, RoutedEventArgs e) в C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\Projects_Page1.xaml.cs:строка 100
