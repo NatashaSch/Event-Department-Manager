@@ -34,7 +34,9 @@ namespace EventDepartmentManager
         {
 
             InitializeComponent();
-            Log.Logging("Выполнен вход в систему" + " " + "Время: " + DateTime.Now.Second);
+            Log.loging.Add("Выполнен вход в систему" + " " + "Время: " + DateTime.Now);
+            Log.Loging();
+
         }
 
 

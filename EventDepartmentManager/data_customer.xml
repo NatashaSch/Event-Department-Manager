@@ -19,5 +19,11 @@
       <Representative>fdgdfgfdg</Representative>
       <RepPhone>454545345345</RepPhone>
     </Customer>
+    <Customer>
+      <Name>fdgfg</Name>
+      <Site>fgfg</Site>
+      <Representative>fgfg</Representative>
+      <RepPhone>4554</RepPhone>
+    </Customer>
   </Cust>
 </ListOfCustomers>

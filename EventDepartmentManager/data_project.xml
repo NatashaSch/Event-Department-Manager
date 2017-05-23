@@ -29,5 +29,19 @@
       <Money>5654656</Money>
       <Date>56464654</Date>
     </Project>
+    <Project>
+      <Name>efsdfsdf</Name>
+      <Description>dfsdf</Description>
+      <Employee>Ринат Забайдулин</Employee>
+      <Customer>
+        <Name>ауыуа</Name>
+        <Site>уауыа</Site>
+        <Representative>ыауыаы</Representative>
+        <RepPhone>45353535</RepPhone>
+      </Customer>
+      <People>342434</People>
+      <Money>3434</Money>
+      <Date>34434</Date>
+    </Project>
   </Proj>
 </ListOfProjects>

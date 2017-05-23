@@ -32,7 +32,7 @@
         <Button x:Name="DeleteClient" Grid.Column="4" Grid.Row="6" Content="Удалить заказчика" FontFamily="Times New Roman" Foreground="#444444" Background="#c9d8e8" FontSize="15" HorizontalAlignment="center" VerticalAlignment="Bottom" Width="170" Height="43" Margin="0,0,52,28" Click="DeleteClient_Click" Grid.RowSpan="2"/>
         <TextBox x:Name="SearchClients" Height="40" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Margin="26,0,0,10" Grid.Column="1" HorizontalAlignment="Left" Width="201"  />
         <Button x:Name="SearchClientsBtn" Click="SearchClientsBtn_Click" Grid.Column="1" Grid.Row="0" Background="White" Margin="232,62,8.333,10">
-            <Image Source="C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\icon_search.png" Height="30" Width="18"></Image>
+            <Image Source="C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\icon_search.png" Height="26" Width="14"></Image>
         </Button>
         <Button x:Name="HelpClients"  Grid.Column="1" Grid.Row="6" HorizontalAlignment="center" VerticalAlignment="center" Width="245" Height="48"  FontFamily="Times New Roman" Foreground="#444444" FontSize="13" Background="White" Margin="26,94.006,10.333,23" Grid.RowSpan="2" Click="HelpClients_Click">
             <Image Source="C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\question.gif" Height="25"></Image>
@@ -46,6 +46,7 @@
         <TextBox x:Name="SiteText" Grid.Row="3" Grid.Column="3" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="left"  Margin="20.333,9.667,0,0" Grid.ColumnSpan="2"/>
         <TextBox x:Name="RepresentativeText" Grid.Row="4" Grid.Column="3" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="center" TextWrapping="Wrap" Text="" VerticalAlignment="center" HorizontalAlignment="left"  Grid.ColumnSpan="2" Margin="20.333,10.333,0,44.333" />
         <TextBox x:Name="PhoneNumberText" Grid.Row="5" Grid.Column="3" Height="40" Width="350" Foreground="#444444" FontFamily="Times New Roman" FontSize="13" TextAlignment="center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" HorizontalAlignment="left"  Margin="20.333,16.667,0,37.667" Grid.ColumnSpan="2" />
+        <Button x:Name="Clear" Content="Очистить поля" HorizontalAlignment="center" VerticalAlignment="center" Grid.Column="2" Grid.Row="6" Width="170" FontFamily="Times New Roman" Foreground="#444444" FontSize="13" Background="#c9d8e8" Height="43" Click="Clear_Click" Margin="48.667,94.126,48,28" Grid.RowSpan="2"/>
 
 
     </Grid>
