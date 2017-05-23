@@ -2,46 +2,116 @@
 <ListOfProjects xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Proj>
     <Project>
-      <Name>rtrtteteetet</Name>
-      <Description>rttrt</Description>
+      <Name>Новогоднее чудо</Name>
+      <Description>Новогодний корпоратив </Description>
       <Employee>Армен Авакян</Employee>
       <Customer>
-        <Name>ауыуа</Name>
-        <Site>уауыа</Site>
-        <Representative>ыауыаы</Representative>
-        <RepPhone>45353535</RepPhone>
+        <Name>Медипал-Онко</Name>
+        <Site>medipal-onko.com</Site>
+        <Representative>Небогина Татьяна Владимировна</Representative>
+        <RepPhone>+79253664211</RepPhone>
       </Customer>
-      <People>455353</People>
-      <Money>43545</Money>
-      <Date>453535</Date>
+      <People>7356</People>
+      <Money>200000</Money>
+      <Date>29.12.2017</Date>
     </Project>
     <Project>
-      <Name>564656546</Name>
-      <Description>fgdfgdfg</Description>
+      <Name>Ням-Ням</Name>
+      <Description>Дегустация нового продукта </Description>
+      <Employee>Наталья Пестова</Employee>
+      <Customer>
+        <Name>Danone</Name>
+        <Site>danone.com</Site>
+        <Representative>Дружинин Никита Александрович</Representative>
+        <RepPhone>+79183665489</RepPhone>
+      </Customer>
+      <People>3950</People>
+      <Money>43876</Money>
+      <Date>05.06.2017</Date>
+    </Project>
+    <Project>
+      <Name>Зверята</Name>
+      <Description>Выставка кошек и собак</Description>
       <Employee>Анна Подображных</Employee>
       <Customer>
-        <Name>gdfgdfg</Name>
-        <Site>fgfgfdg</Site>
-        <Representative>fdgdfgfdg</Representative>
-        <RepPhone>454545345345</RepPhone>
+        <Name>Бетховен</Name>
+        <Site>bethoven.com</Site>
+        <Representative>Цветков Евгений Иванович</Representative>
+        <RepPhone>+78193578940</RepPhone>
       </Customer>
-      <People>454545</People>
-      <Money>5654656</Money>
-      <Date>56464654</Date>
+      <People>8485</People>
+      <Money>395876</Money>
+      <Date>20.07.2017</Date>
     </Project>
     <Project>
-      <Name>efsdfsdf</Name>
-      <Description>dfsdf</Description>
+      <Name>Вокруг света</Name>
+      <Description>Летний выезд компании с целью проведения teambuilding</Description>
       <Employee>Ринат Забайдулин</Employee>
       <Customer>
-        <Name>ауыуа</Name>
-        <Site>уауыа</Site>
-        <Representative>ыауыаы</Representative>
-        <RepPhone>45353535</RepPhone>
+        <Name>Nutricia</Name>
+        <Site>nutricia.com</Site>
+        <Representative>Щепочкин Олег Владимирович</Representative>
+        <RepPhone>+79253580027</RepPhone>
       </Customer>
-      <People>342434</People>
-      <Money>3434</Money>
-      <Date>34434</Date>
+      <People>50000</People>
+      <Money>1000000</Money>
+      <Date>30.07.2017</Date>
+    </Project>
+    <Project>
+      <Name>Чугунное яйцо</Name>
+      <Description>Церемония вручения студенческой премии ВШЭ</Description>
+      <Employee>Наталия Щепочкина</Employee>
+      <Customer>
+        <Name>ВШЭ</Name>
+        <Site>hse.ru</Site>
+        <Representative>Самохин Михаил Юрьевич</Representative>
+        <RepPhone>+79255364755</RepPhone>
+      </Customer>
+      <People>260</People>
+      <Money>50000</Money>
+      <Date>31.05.2017</Date>
+    </Project>
+    <Project>
+      <Name>Битрикс</Name>
+      <Description>Курсы для изучения языка программирования</Description>
+      <Employee>Елизавета Алексеева</Employee>
+      <Customer>
+        <Name>ВШЭ</Name>
+        <Site>hse.ru</Site>
+        <Representative>Самохин Михаил Юрьевич</Representative>
+        <RepPhone>+79255364755</RepPhone>
+      </Customer>
+      <People>40</People>
+      <Money>20000</Money>
+      <Date>17.09.2017</Date>
+    </Project>
+    <Project>
+      <Name>HSE Press</Name>
+      <Description>День открытых дверей</Description>
+      <Employee>Антон Ересковский</Employee>
+      <Customer>
+        <Name>ВШЭ</Name>
+        <Site>hse.ru</Site>
+        <Representative>Самохин Михаил Юрьевич</Representative>
+        <RepPhone>+79255364755</RepPhone>
+      </Customer>
+      <People>400</People>
+      <Money>30000</Money>
+      <Date>05.06.2017</Date>
+    </Project>
+    <Project>
+      <Name>Абитир</Name>
+      <Description>Проект развития личностных качест для абитуриентов ВШЭ</Description>
+      <Employee>Арина Евсюкова</Employee>
+      <Customer>
+        <Name>ВШЭ</Name>
+        <Site>hse.ru</Site>
+        <Representative>Самохин Михаил Юрьевич</Representative>
+        <RepPhone>+79255364755</RepPhone>
+      </Customer>
+      <People>50000</People>
+      <Money>60000</Money>
+      <Date>31.07.2019</Date>
     </Project>
   </Proj>
 </ListOfProjects>

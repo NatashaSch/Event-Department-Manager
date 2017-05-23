@@ -2,28 +2,46 @@
 <ListOfCustomers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Cust>
     <Customer>
-      <Name>4yhh</Name>
-      <Site>rhfhf</Site>
-      <Representative>hfghfg</Representative>
-      <RepPhone>5453</RepPhone>
+      <Name>ВШЭ</Name>
+      <Site>hse.ru</Site>
+      <Representative>Самохин Михаил Юрьевич</Representative>
+      <RepPhone>+79255364755</RepPhone>
     </Customer>
     <Customer>
-      <Name>ауыуа</Name>
-      <Site>уауыа</Site>
-      <Representative>ыауыаы</Representative>
-      <RepPhone>45353535</RepPhone>
+      <Name>Danone</Name>
+      <Site>danone.com</Site>
+      <Representative>Дружинин Никита Александрович</Representative>
+      <RepPhone>+79183665489</RepPhone>
     </Customer>
     <Customer>
-      <Name>gdfgdfg</Name>
-      <Site>fgfgfdg</Site>
-      <Representative>fdgdfgfdg</Representative>
-      <RepPhone>454545345345</RepPhone>
+      <Name>Nutricia</Name>
+      <Site>nutricia.com</Site>
+      <Representative>Щепочкин Олег Владимирович</Representative>
+      <RepPhone>+79253580027</RepPhone>
     </Customer>
     <Customer>
-      <Name>fdgfg</Name>
-      <Site>fgfg</Site>
-      <Representative>fgfg</Representative>
-      <RepPhone>4554</RepPhone>
+      <Name>Медипал-Онко</Name>
+      <Site>medipal-onko.com</Site>
+      <Representative>Небогина Татьяна Владимировна</Representative>
+      <RepPhone>+79253664211</RepPhone>
+    </Customer>
+    <Customer>
+      <Name>Веселая затея</Name>
+      <Site>guk.com</Site>
+      <Representative>Кожухов Евгений Игоревич</Representative>
+      <RepPhone>+78124356785</RepPhone>
+    </Customer>
+    <Customer>
+      <Name>Бетховен</Name>
+      <Site>bethoven.com</Site>
+      <Representative>Цветков Евгений Иванович</Representative>
+      <RepPhone>+78193578940</RepPhone>
+    </Customer>
+    <Customer>
+      <Name>Pandora</Name>
+      <Site>pandora.com</Site>
+      <Representative>Захарова Анастасия Валерьевна</Representative>
+      <RepPhone>+79253763322</RepPhone>
     </Customer>
   </Cust>
 </ListOfCustomers>
