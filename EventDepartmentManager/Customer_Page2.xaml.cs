@@ -54,8 +54,7 @@ namespace EventDepartmentManager
                 Customer cust = new Customer(NameCustomerText.Text, SiteText.Text, RepresentativeText.Text, PhoneNumberText.Text);
 
                 lc.Cust.Add(cust);
-                Log.loging.Add("Добавлен клиент: " + cust.Name + " " + DateTime.Now);
-                Log.Loging();
+                Log.logging("Добавлен клиент: " + cust.Name + " " + DateTime.Now);
                 Serialization.Serialize(lc);
 
                 ClientsListBox.Items.Clear();
@@ -80,8 +79,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка" + ex);
-                Log.Loging();
+                Log.logging("Ошибка" + ex);
             }
           }
 
@@ -109,8 +107,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка" + ex);
-                Log.Loging();
+                Log.logging("Ошибка" + ex);
 
             }
             
@@ -134,14 +131,12 @@ namespace EventDepartmentManager
                         
                         break;
                     }
-                    Log.loging.Add("Произведен поиск клиента: " + cs.Name + " " + DateTime.Now);
-                    Log.Loging();
+                    Log.logging("Произведен поиск клиента: " + cs.Name + " " + DateTime.Now);
                 }
                 if (!exist_c)
                 {
                     MessageBox.Show("Такой заказчик не найден");
-                    Log.loging.Add("Ошибка: искомого заказчика не существует");
-                    Log.Loging();
+                    Log.logging("Ошибка: искомого заказчика не существует");
 
                 }
                 exist_c = false;
@@ -152,8 +147,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка: " + ex);
-                Log.Loging();
+                Log.logging("Ошибка: " + ex);
             }
         }
 
@@ -174,8 +168,7 @@ namespace EventDepartmentManager
                             RepresentativeText.Text = cs.Representative;
                             PhoneNumberText.Text = cs.RepPhone.ToString();
 
-                            Log.loging.Add("Удален клиент: " + cs.Name + " " + DateTime.Now);
-                            Log.Loging();
+                            Log.logging("Удален клиент: " + cs.Name + " " + DateTime.Now);
                             lc.Cust.Remove(cs);
 
                             break;
@@ -206,8 +199,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка: " + ex);
-                Log.Loging();
+                Log.logging("Ошибка: " + ex);
             }
          }
 

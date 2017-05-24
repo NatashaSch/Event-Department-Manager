@@ -16,20 +16,6 @@
       <Date>29.12.2017</Date>
     </Project>
     <Project>
-      <Name>Ням-Ням</Name>
-      <Description>Дегустация нового продукта </Description>
-      <Employee>Наталья Пестова</Employee>
-      <Customer>
-        <Name>Danone</Name>
-        <Site>danone.com</Site>
-        <Representative>Дружинин Никита Александрович</Representative>
-        <RepPhone>+79183665489</RepPhone>
-      </Customer>
-      <People>3950</People>
-      <Money>43876</Money>
-      <Date>05.06.2017</Date>
-    </Project>
-    <Project>
       <Name>Зверята</Name>
       <Description>Выставка кошек и собак</Description>
       <Employee>Анна Подображных</Employee>

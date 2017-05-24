@@ -27,6 +27,32 @@
             <Button x:Name="CurrentProjectBtn" Content="Текущие проекты" HorizontalAlignment="left" VerticalAlignment="Bottom" Width="182" Height="60" FontFamily="Times New Roman" FontSize="20" Foreground="#2a2b2d" Background="#a1b8d1"  Click="CurrentProject_Click" Margin="10,100"/>
             <Button x:Name="CurrentClientsBtn" Content="Текущие заказчики" Grid.Row="2" Grid.Column="0" HorizontalAlignment="left" VerticalAlignment="Bottom" Width="182" Height="60" FontFamily="Times New Roman" FontSize="20" Foreground="#2a2b2d" Background="#a1b8d1" Margin="10,50,10,29" Click="CurrentClients_Click"/>
         </StackPanel>
+        <Image x:Name="image_1" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="left" Height="560" VerticalAlignment="top" Width="900"  Source="image_1.1.png" Margin="41,28,0,0">
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="image_1" Storyboard.TargetProperty="(UIElement.Opacity)" From="0" To="1" Duration="0:0:8" AutoReverse="True" RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Image x:Name="image_2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="left" Height="560" VerticalAlignment="top" Width="900" Source="image_2.jpg" Margin="41,28,0,0">
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="image_2" Storyboard.TargetProperty="(UIElement.Opacity)" From="1" To="0" Duration="0:0:8" AutoReverse="True" RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
 
 
 

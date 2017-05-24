@@ -86,8 +86,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка: " + ex);
-                Log.Loging();
+                Log.logging("Ошибка: " + ex);
             }
         }
 
@@ -129,8 +128,7 @@ namespace EventDepartmentManager
                 
 
                 lp.Proj.Add(proj);
-                Log.loging.Add("Изменен проект: " + proj.Name + " " + DateTime.Now);
-                Log.Loging();
+                Log.logging("Изменен проект: " + proj.Name + " " + DateTime.Now);
                 Serialization.Serialize_proj(lp);
 
                
@@ -147,8 +145,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка: " + ex);
-                Log.Loging();
+                Log.logging("Ошибка: " + ex);
             }
 
         }
@@ -175,8 +172,7 @@ namespace EventDepartmentManager
                 Project proj = new Project(NameText.Text, Description.Text, ManagerComboBox.Text, customer, int.Parse(People.Text), int.Parse(Money.Text), Date.Text);
 
                 lp.Proj.Add(proj);
-                Log.loging.Add("Добавлен проект: " + proj.Name + " " + DateTime.Now);
-                Log.Loging();
+                Log.logging("Добавлен проект: " + proj.Name + " " + DateTime.Now);
 
                 Serialization.Serialize_proj(lp);
 
@@ -203,8 +199,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка: " + ex);
-                Log.Loging();
+                Log.logging("Ошибка: " + ex);
             }
         }
 
@@ -230,8 +225,7 @@ namespace EventDepartmentManager
                        
                         break;
                     }
-                    Log.loging.Add("Выполнен поиск проекта: " + pr.Name + " " + DateTime.Now);
-                    Log.Loging();
+                    Log.logging("Выполнен поиск проекта: " + pr.Name + " " + DateTime.Now);
 
 
                 }
@@ -247,8 +241,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка: " + ex);
-                Log.Loging();
+                Log.logging("Ошибка: " + ex);
             }
 
         }
@@ -280,8 +273,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка: " + ex);
-                Log.Loging();
+                Log.logging("Ошибка: " + ex);
             }
 
         }
@@ -307,13 +299,12 @@ namespace EventDepartmentManager
                             Money.Text = pr.Money.ToString();
                             Date.Text = pr.Date.ToString();
 
-                            
+                            Log.logging("Удален проект: " + pr.Name + " " + DateTime.Now);
+
 
                             lp.Proj.Remove(pr);
                             break;
                         }
-                        Log.loging.Add("Удален проект: " + pr.Name + " " + DateTime.Now);
-                        Log.Loging();
                     }
                 }
                 Serialization.Serialize_proj(lp);
@@ -341,8 +332,7 @@ namespace EventDepartmentManager
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.loging.Add("Ошибка: " + ex);
-                Log.Loging();
+                Log.logging("Ошибка: " + ex);
             }
 
         }

@@ -8,23 +8,13 @@ namespace EventDepartmentManager
 {
     public class Log
     {
-        public static List<string> loging = new List<string>();
-
-        public static void Loging ()
-
+        public static void logging(string log)
         {
-            using (FileStream fs = new FileStream("../../log.txt", FileMode.Open))
+            using (var l = File.AppendText("../../log.txt"))
             {
-                using (StreamWriter sw = new StreamWriter(fs, Encoding.Default))
-                {
-                    foreach (var item in loging)
-                    {
-                        sw.WriteLine(item);
-                    }
-                   
-                }
+                l.WriteLine(log);
             }
-        }  
+        }
 
 
     }
