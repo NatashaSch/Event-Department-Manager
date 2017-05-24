@@ -44,12 +44,15 @@ namespace EventDepartmentManager
 
         private void CurrentProject_Click(object sender, RoutedEventArgs e)
         {
-          
+            image_1.Visibility=Visibility.Hidden;
+            image_2.Visibility = Visibility.Hidden;
             MainPage.Content = new Projects_Page1();
         }
 
         private void CurrentClients_Click(object sender, RoutedEventArgs e)
         {
+            image_1.Visibility = Visibility.Hidden;
+            image_2.Visibility = Visibility.Hidden;
             MainPage.Content = new Customer_Page2();
         }
 

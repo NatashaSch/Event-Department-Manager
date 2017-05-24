@@ -99,5 +99,19 @@
       <Money>60000</Money>
       <Date>31.07.2019</Date>
     </Project>
+    <Project>
+      <Name>nnn</Name>
+      <Description>hhhgdgdfvfdfbsdgb</Description>
+      <Employee>Елизавета Алексеева</Employee>
+      <Customer>
+        <Name>Danone</Name>
+        <Site>danone.com</Site>
+        <Representative>Дружинин Никита Александрович</Representative>
+        <RepPhone>+79183665489</RepPhone>
+      </Customer>
+      <People>989</People>
+      <Money>7</Money>
+      <Date>353</Date>
+    </Project>
   </Proj>
 </ListOfProjects>

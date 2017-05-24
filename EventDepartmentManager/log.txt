@@ -15,3 +15,27 @@
 Выполнен вход в систему Время: 24.05.2017 19:18:08
 Выполнен вход в систему Время: 24.05.2017 19:20:49
 Выполнен вход в систему Время: 24.05.2017 19:42:46
+Выполнен вход в систему Время: 24.05.2017 20:16:00
+Выполнен вход в систему Время: 24.05.2017 20:20:11
+Выполнен вход в систему Время: 24.05.2017 20:20:45
+Ошибка: System.FormatException: Входная строка имела неверный формат.
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в EventDepartmentManager.Projects_Page1.AddProject_Click(Object sender, RoutedEventArgs e) в C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\Projects_Page1.xaml.cs:строка 172
+Добавлен проект: mmmm 24.05.2017 20:23:25
+Изменен проект: mmmm 24.05.2017 20:23:31
+Изменен проект: mmmm 24.05.2017 20:23:38
+Ошибка: System.FormatException: Входная строка имела неверный формат.
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в EventDepartmentManager.Projects_Page1.AddProject_Click(Object sender, RoutedEventArgs e) в C:\Users\Natalya\Desktop\экзамен\Кдз\EventDepartmentManager\EventDepartmentManager\Projects_Page1.xaml.cs:строка 172
+Добавлен проект: nnn 24.05.2017 20:24:27
+Изменен проект: nnn 24.05.2017 20:24:36
+Изменен проект: mmmm 24.05.2017 20:24:56
+Изменен проект: nnn 24.05.2017 20:25:53
+Изменен проект: mmmm 24.05.2017 20:26:04
+Изменен проект: mmmm 24.05.2017 20:26:15
+Удален проект: mmmm 24.05.2017 20:26:21
+Удален проект: mmmm 24.05.2017 20:26:26
