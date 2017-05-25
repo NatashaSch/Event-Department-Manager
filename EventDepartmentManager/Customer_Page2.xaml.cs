@@ -50,31 +50,45 @@ namespace EventDepartmentManager
         {
             try
             {
-
-                Customer cust = new Customer(NameCustomerText.Text, SiteText.Text, RepresentativeText.Text, PhoneNumberText.Text);
-
-                lc.Cust.Add(cust);
-                Log.logging("Добавлен клиент: " + cust.Name + " " + DateTime.Now);
-                Serialization.Serialize(lc);
-
-                ClientsListBox.Items.Clear();
-
-
-                lc = Serialization.Deserialze(lc);
-
-                NameCustomerText.Clear();
-                SiteText.Clear();
-                RepresentativeText.Clear();
-                PhoneNumberText.Clear();
-
-
-                foreach (var item in lc.Cust)
+                if (ClientsListBox.SelectedItem.ToString() != NameCustomerText.Text)
                 {
-                    ClientsListBox.Items.Add(item.Name);
+
+                    Customer cust = new Customer(NameCustomerText.Text, SiteText.Text, RepresentativeText.Text, PhoneNumberText.Text);
+
+                    lc.Cust.Add(cust);
+                    Log.logging("Добавлен клиент: " + cust.Name + " " + DateTime.Now);
+                    Serialization.Serialize(lc);
+
+                    ClientsListBox.Items.Clear();
 
 
+                    lc = Serialization.Deserialze(lc);
+
+                    NameCustomerText.Clear();
+                    SiteText.Clear();
+                    RepresentativeText.Clear();
+                    PhoneNumberText.Clear();
+
+
+                    foreach (var item in lc.Cust)
+                    {
+                        ClientsListBox.Items.Add(item.Name);
+
+
+                    }
+                    MessageBox.Show("Сохранено!");
                 }
-                MessageBox.Show("Сохранено!");
+                else
+                {
+                    MessageBox.Show("Такой заказчик уже существует!");
+                    NameCustomerText.Clear();
+                    SiteText.Clear();
+                    RepresentativeText.Clear();
+                    PhoneNumberText.Clear();
+
+                    ClientsListBox.SelectedItem = -1;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -128,10 +142,11 @@ namespace EventDepartmentManager
                         RepresentativeText.Text = cs.Representative;
                         PhoneNumberText.Text = cs.RepPhone.ToString();
                         exist_c = true;
-                        
+
+                        Log.logging("Произведен поиск клиента: " + cs.Name + " " + DateTime.Now);
                         break;
                     }
-                    Log.logging("Произведен поиск клиента: " + cs.Name + " " + DateTime.Now);
+                    
                 }
                 if (!exist_c)
                 {
@@ -215,6 +230,8 @@ namespace EventDepartmentManager
             SiteText.Clear();
             RepresentativeText.Clear();
             PhoneNumberText.Clear();
+
+            ClientsListBox.SelectedItem = -1;
         }
     }
 }

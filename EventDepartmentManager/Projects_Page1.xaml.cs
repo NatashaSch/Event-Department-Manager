@@ -125,9 +125,10 @@ namespace EventDepartmentManager
 
                 Project proj = new Project(NameText.Text, Description.Text, ManagerComboBox.Text, customer, int.Parse(People.Text), int.Parse(Money.Text), Date.Text);
 
-                
-
+              
                 lp.Proj.Add(proj);
+          
+
                 Log.logging("Изменен проект: " + proj.Name + " " + DateTime.Now);
                 Serialization.Serialize_proj(lp);
 
@@ -139,6 +140,18 @@ namespace EventDepartmentManager
                 {
                     AllPrListBox.Items.Add(item.Name);
                 }
+
+
+
+                NameText.Clear();
+                Description.Clear();
+                ManagerComboBox.SelectedIndex = -1;
+                CustomerComboBox.SelectedIndex = -1;
+                People.Clear();
+                Money.Clear();
+                Date.Clear();
+
+                AllPrListBox.SelectedItem = -1;
 
 
             }
@@ -154,46 +167,55 @@ namespace EventDepartmentManager
         {
             try
             {
-
-                Customer customer = null;
-                lc.Cust = new List<Customer>();
-
-                lc = Serialization.Deserialze(lc);
-                foreach (var item in lc.Cust)
+                if (AllPrListBox.SelectedItem.ToString() != NameText.Text)
                 {
-                    if (CustomerComboBox.SelectedItem.ToString() == item.Name)
+                    Customer customer = null;
+                    lc.Cust = new List<Customer>();
+
+                    lc = Serialization.Deserialze(lc);
+                    foreach (var item in lc.Cust)
                     {
-                        customer = item;
+                        if (CustomerComboBox.SelectedItem.ToString() == item.Name)
+                        {
+                            customer = item;
+                        }
+                    }
+
+
+
+                    Project proj = new Project(NameText.Text, Description.Text, ManagerComboBox.Text, customer, int.Parse(People.Text), int.Parse(Money.Text), Date.Text);
+
+                    lp.Proj.Add(proj);
+                    Log.logging("Добавлен проект: " + proj.Name + " " + DateTime.Now);
+
+                    Serialization.Serialize_proj(lp);
+
+                    lp = Serialization.Deserialze_proj(lp);
+
+                    MessageBox.Show("Сохранено!");
+
+
+                    AllPrListBox.Items.Clear();
+                    foreach (var item in lp.Proj)
+                    {
+                        AllPrListBox.Items.Add(item.Name);
                     }
                 }
-
-
-
-                Project proj = new Project(NameText.Text, Description.Text, ManagerComboBox.Text, customer, int.Parse(People.Text), int.Parse(Money.Text), Date.Text);
-
-                lp.Proj.Add(proj);
-                Log.logging("Добавлен проект: " + proj.Name + " " + DateTime.Now);
-
-                Serialization.Serialize_proj(lp);
-
-                lp = Serialization.Deserialze_proj(lp);
-
-                MessageBox.Show("Сохранено!");
-                
-
-                NameText.Text = "";
-                Description.Text = "";
-                ManagerComboBox.Text = "";
-                CustomerComboBox.Text = "";
-                People.Text = "";
-                Money.Text = "";
-                Date.Text = "";
-
-                AllPrListBox.Items.Clear();
-                foreach (var item in lp.Proj)
+                else
                 {
-                    AllPrListBox.Items.Add(item.Name);
+                    MessageBox.Show("Такой проект уже существует");
+               
                 }
+
+                AllPrListBox.SelectedItem = -1;
+                NameText.Clear();
+                Description.Clear();
+                ManagerComboBox.SelectedIndex = -1;
+                CustomerComboBox.SelectedIndex = -1;
+                People.Clear();
+                Money.Clear();
+                Date.Clear();
+
 
             }
             catch (Exception ex)
@@ -222,10 +244,11 @@ namespace EventDepartmentManager
                         Money.Text = pr.Money.ToString();
                         Date.Text = pr.Date.ToString();
                         exist_p = true;
-                       
+
+                        Log.logging("Выполнен поиск проекта: " + pr.Name + " " + DateTime.Now);
                         break;
                     }
-                    Log.logging("Выполнен поиск проекта: " + pr.Name + " " + DateTime.Now);
+                   
 
 
                 }

@@ -16,20 +16,6 @@
       <Date>29.12.2017</Date>
     </Project>
     <Project>
-      <Name>Зверята</Name>
-      <Description>Выставка кошек и собак</Description>
-      <Employee>Анна Подображных</Employee>
-      <Customer>
-        <Name>Бетховен</Name>
-        <Site>bethoven.com</Site>
-        <Representative>Цветков Евгений Иванович</Representative>
-        <RepPhone>+78193578940</RepPhone>
-      </Customer>
-      <People>8485</People>
-      <Money>395876</Money>
-      <Date>20.07.2017</Date>
-    </Project>
-    <Project>
       <Name>Вокруг света</Name>
       <Description>Летний выезд компании с целью проведения teambuilding</Description>
       <Employee>Ринат Забайдулин</Employee>
@@ -42,20 +28,6 @@
       <People>50000</People>
       <Money>1000000</Money>
       <Date>30.07.2017</Date>
-    </Project>
-    <Project>
-      <Name>Чугунное яйцо</Name>
-      <Description>Церемония вручения студенческой премии ВШЭ</Description>
-      <Employee>Наталия Щепочкина</Employee>
-      <Customer>
-        <Name>ВШЭ</Name>
-        <Site>hse.ru</Site>
-        <Representative>Самохин Михаил Юрьевич</Representative>
-        <RepPhone>+79255364755</RepPhone>
-      </Customer>
-      <People>260</People>
-      <Money>50000</Money>
-      <Date>31.05.2017</Date>
     </Project>
     <Project>
       <Name>Битрикс</Name>
@@ -86,6 +58,20 @@
       <Date>05.06.2017</Date>
     </Project>
     <Project>
+      <Name>Зверята</Name>
+      <Description>Выставка кошек и собак</Description>
+      <Employee>Анна Подображных</Employee>
+      <Customer>
+        <Name>Бетховен</Name>
+        <Site>bethoven.com</Site>
+        <Representative>Цветков Евгений Иванович</Representative>
+        <RepPhone>+78193578940</RepPhone>
+      </Customer>
+      <People>400</People>
+      <Money>395876</Money>
+      <Date>20.07.2017</Date>
+    </Project>
+    <Project>
       <Name>Абитир</Name>
       <Description>Проект развития личностных качест для абитуриентов ВШЭ</Description>
       <Employee>Арина Евсюкова</Employee>
@@ -95,23 +81,37 @@
         <Representative>Самохин Михаил Юрьевич</Representative>
         <RepPhone>+79255364755</RepPhone>
       </Customer>
-      <People>50000</People>
+      <People>600</People>
       <Money>60000</Money>
       <Date>31.07.2019</Date>
     </Project>
     <Project>
-      <Name>nnn</Name>
-      <Description>hhhgdgdfvfdfbsdgb</Description>
-      <Employee>Елизавета Алексеева</Employee>
+      <Name>Чугунное яйцо</Name>
+      <Description>Церемония вручения студенческой премии ВШЭ</Description>
+      <Employee>Наталия Щепочкина</Employee>
       <Customer>
-        <Name>Danone</Name>
-        <Site>danone.com</Site>
-        <Representative>Дружинин Никита Александрович</Representative>
-        <RepPhone>+79183665489</RepPhone>
+        <Name>ВШЭ</Name>
+        <Site>hse.ru</Site>
+        <Representative>Самохин Михаил Юрьевич</Representative>
+        <RepPhone>+79255364755</RepPhone>
       </Customer>
-      <People>989</People>
-      <Money>7</Money>
-      <Date>353</Date>
+      <People>700</People>
+      <Money>50000</Money>
+      <Date>31.05.2017</Date>
+    </Project>
+    <Project>
+      <Name>Выпускной "Бизнес в стиле .RU"</Name>
+      <Description>Выпуск второго курса и выдача резюме</Description>
+      <Employee>Наталия Щепочкина</Employee>
+      <Customer>
+        <Name>ВШЭ</Name>
+        <Site>hse.ru</Site>
+        <Representative>Самохин Михаил Юрьевич</Representative>
+        <RepPhone>+79255364755</RepPhone>
+      </Customer>
+      <People>40</People>
+      <Money>8000</Money>
+      <Date>31.05.17</Date>
     </Project>
   </Proj>
 </ListOfProjects>
